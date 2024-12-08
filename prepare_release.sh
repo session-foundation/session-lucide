@@ -205,15 +205,14 @@ make_release() {
 
 	local commit_message="Session Lucide ${new_version} (Lucide ${upstream_version})"
 
-	git add "${cwd}/README.md" "${cwd}/Package.swift" "${cwd}/assets/xcodeproj.patch"
+	cd "${cwd}"
+	git add "${cwd}/README.md" "${cwd}/LICENSE" "${cwd}/Sources/Lucide/lucide.ttf" "${cwd}/Sources/Lucide/Lucide+Icon.swift"
 	git commit -m "$commit_message"
 	git tag -m "$commit_message" "$new_version"
 
-	mv "${xcframework_zip}" "./Lucide.xcframework.zip"
-
 	cat <<- EOF
 
-	🎉 Release is to upload, archive at "./Lucide.xcframework.zip"
+	🎉 Release is ready"
 	EOF
 }
 
