@@ -3,6 +3,7 @@
 import Foundation
 
 public extension Lucide {
+    // Dynamically generated icon cases from JSON
     public enum Icon: String {
         case aArrowDown = "\u{e589}"
         case aArrowUp = "\u{e58a}"
@@ -838,6 +839,7 @@ public extension Lucide {
         case listChecks = "\u{e1cf}"
         case listCollapse = "\u{e59f}"
         case listEnd = "\u{e2de}"
+        case listFilterPlus = "\u{e63d}"
         case listFilter = "\u{e464}"
         case listMinus = "\u{e23d}"
         case listMusic = "\u{e2df}"
@@ -1180,6 +1182,7 @@ public extension Lucide {
         case scanBarcode = "\u{e539}"
         case scanEye = "\u{e53a}"
         case scanFace = "\u{e374}"
+        case scanHeart = "\u{e63e}"
         case scanLine = "\u{e257}"
         case scanQrCode = "\u{e5fa}"
         case scanSearch = "\u{e53b}"
@@ -1517,6 +1520,7 @@ public extension Lucide {
         case warehouse = "\u{e3e9}"
         case washingMachine = "\u{e594}"
         case watch = "\u{e1ac}"
+        case wavesLadder = "\u{e63f}"
         case waves = "\u{e282}"
         case waypoints = "\u{e546}"
         case webcam = "\u{e204}"
