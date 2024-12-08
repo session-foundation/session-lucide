@@ -112,7 +112,6 @@ update_readme() {
 	envsubst < "${cwd}/assets/README.md.in" > README.md
 
 	echo "Updated README.md ✅"
-	echo ""
 }
 
 setup_log_formatter() {
@@ -131,7 +130,7 @@ setup_log_formatter() {
 generate_swift_code() {
 	local json_path="$1"
 	local output_swift_path="$2"
-#// Need to custom handle "import", "repeat" and "subscript" cases
+
 	# Process JSON and generate Swift enum cases
     icons=$(jq -rc 'to_entries | .[] | 
         # Convert kebab-case to camelCase
@@ -187,8 +186,7 @@ update_sources() {
 	local font_path="${cwd}/Sources/Lucide/lucide.ttf"
 	local swift_path="${cwd}/Sources/Lucide/Lucide+Icon.swift"
 
-	echo ""
-	echo "Updating Sources..."
+	printf '%s' "Updating Sources..."
 
 	rm -rf "${license_path}" "${swift_path}" "${font_path}"
 
@@ -201,7 +199,7 @@ update_sources() {
 }
 
 make_release() {
-	echo "Making ${new_version} release ... 🚢"
+	echo "Making ${new_version} release... 🚢"
 
 	local commit_message="Session Lucide ${new_version} (Lucide ${upstream_version})"
 
