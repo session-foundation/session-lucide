@@ -109,7 +109,7 @@ update_readme() {
 		read -rp "Input Session Lucide desired version number (x.y.z): " new_version < /dev/tty
 	done
 
-	envsubst < "${cwd}/assets/README.md.in" > README.md
+	envsubst < "${cwd}/assets/README.md.in" > "${cwd}/README.md"
 
 	echo "Updated README.md ✅"
 }
