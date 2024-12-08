@@ -200,14 +200,6 @@ update_sources() {
 	echo "✅"
 }
 
-update_swift_package() {
-	printf '%s' "Updating Package.swift ... "
-	export checksum
-	checksum=$(swift package compute-checksum "$xcframework_zip")
-	envsubst < "${cwd}/assets/Package.swift.in" > "${cwd}/Package.swift"
-	echo "✅"
-}
-
 make_release() {
 	echo "Making ${new_version} release ... 🚢"
 
@@ -234,7 +226,6 @@ main() {
 	download_release "$lucide_tag"
 	update_readme
 	update_sources
-	update_swift_package
 	make_release
 }
 
