@@ -2,7 +2,7 @@ import UIKit
 import SwiftUI
 
 public extension Lucide {
-    public static let defaultBaselineOffset: CGFloat = 2
+    public static let defaultBaselineOffset: CGFloat = -2
     
     public static func attributes(
         for originalFont: UIFont,
