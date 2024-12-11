@@ -28,7 +28,7 @@ public extension Lucide {
         baselineOffset: CGFloat = defaultBaselineOffset
     ) -> NSAttributedString {
         return NSAttributedString(
-            string: icon.rawValue,
+            string: "\(icon)",
             attributes: [
                 .font: Lucide.font(ofSize: size),
                 .baselineOffset: baselineOffset
@@ -44,7 +44,7 @@ public extension Lucide {
         let targetSize: CGFloat = (originalFont.pointSize + 1)
         
         return NSAttributedString(
-            string: icon.rawValue,
+            string: "\(icon)",
             attributes: attributes(for: originalFont, baselineOffset: baselineOffset)
         )
     }
@@ -80,7 +80,7 @@ public extension Lucide.Icon {
 }
 
 extension Lucide.Icon: CustomStringConvertible {
-    public var description: String { rawValue }
+    public var description: String { "<icon>\(rawValue)</icon>" }
 }
 
 // MARK: - SwiftUI
@@ -91,7 +91,7 @@ public extension Lucide.Icon {
         size: CGFloat,
         baselineOffset: CGFloat = Lucide.defaultBaselineOffset
     ) -> Text {
-        return Text(rawValue)
+        return Text("\(self)")
             .font(Lucide.font(ofSize: size))
             .baselineOffset(baselineOffset)
     }
