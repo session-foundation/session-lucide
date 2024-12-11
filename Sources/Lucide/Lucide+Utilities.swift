@@ -28,7 +28,7 @@ public extension Lucide {
         baselineOffset: CGFloat = defaultBaselineOffset
     ) -> NSAttributedString {
         return NSAttributedString(
-            string: "\(icon)",
+            string: icon.rawValue,
             attributes: [
                 .font: Lucide.font(ofSize: size),
                 .baselineOffset: baselineOffset
@@ -44,7 +44,7 @@ public extension Lucide {
         let targetSize: CGFloat = (originalFont.pointSize + 1)
         
         return NSAttributedString(
-            string: "\(icon)",
+            string: icon.rawValue,
             attributes: attributes(for: originalFont, baselineOffset: baselineOffset)
         )
     }
@@ -91,7 +91,7 @@ public extension Lucide.Icon {
         size: CGFloat,
         baselineOffset: CGFloat = Lucide.defaultBaselineOffset
     ) -> Text {
-        return Text("\(self)")
+        return Text(rawValue)
             .font(Lucide.font(ofSize: size))
             .baselineOffset(baselineOffset)
     }
