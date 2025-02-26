@@ -81,7 +81,8 @@ download_release() {
 		jq -r ".assets[] | select(.name | test(\"font\")) | select(.name | endswith(\".zip\")) | .browser_download_url")
  
 	if [ -z "$ASSET_URL" ]; then
-	    echo "No assets containing 'font' found in release $lucide_tag."
+		echo ""
+	    echo "No assets containing 'font' found in release $lucide_tag ❌"
 	    exit 1
 	fi
 
@@ -97,8 +98,8 @@ download_release() {
 }
 
 update_readme() {
-	current_version="$(git describe --tags --abbrev=0 --exclude=v* main)"
-	current_upstream_version="$(grep '\* Lucide' README.md | cut -d '*' -f 3)"
+	current_version="$(grep '\* Lucide' "${cwd}/README.md" | cut -d '*' -f 3)"
+	current_upstream_version="$(git describe --tags --abbrev=0 --exclude=v* main)"
 
 	export new_version upstream_version="${lucide_tag#v}"
 
@@ -111,7 +112,7 @@ update_readme() {
 	cat <<- EOF
 
 	Session Lucide current version: ${current_version}
-	Upstream Lucide version: ${current_upstream_version} -> ${upstream_version}
+	Upstream Lucide version: ${upstream_version} (Latest: ${current_upstream_version})
 	EOF
 
 	while ! [[ "${new_version}" =~ [0-9]+\.[0-9]+\.[0-9]+ ]]; do
