@@ -49,11 +49,19 @@ public extension Lucide {
         )
     }
 
-    public static func image(icon: Lucide.Icon, size: CGFloat, color: UIColor = .black) -> UIImage? {
-        let attributedString = self.attributedString(icon: icon, size: size, baselineOffset: 0)
+    public static func image(icon: Lucide.Icon, size: CGFloat) -> UIImage? {
+        let attributedString: NSAttributedString = self.attributedString(icon: icon, size: size, baselineOffset: 0)
+        let stringSize: CGSize = attributedString.size()
         
         UIGraphicsBeginImageContextWithOptions(CGSize(width: size, height: size), false, 0)
-        attributedString.draw(in: CGRect(x: 0, y: 0, width: size, height: size))
+        attributedString.draw(
+            in: CGRect(
+                x: ((size - stringSize.width) / 2),
+                y: ((size - stringSize.height) / 2),
+                width: size,
+                height: size
+            )
+        )
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
