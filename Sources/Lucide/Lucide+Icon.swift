@@ -4,7 +4,7 @@ import Foundation
 
 public extension Lucide {
     // Dynamically generated icon cases from JSON
-    public enum Icon: String {
+    public enum Icon: String, Sendable {
         case aArrowDown = "\u{e589}"
         case aArrowUp = "\u{e58a}"
         case aLargeSmall = "\u{e58b}"
