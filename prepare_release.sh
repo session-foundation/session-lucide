@@ -184,7 +184,7 @@ import Foundation
 
 public extension Lucide {
     // Dynamically generated icon cases from JSON
-    public enum Icon: String {
+    public enum Icon: String, Sendable {
 $icons
     }
 }

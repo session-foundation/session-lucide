@@ -13,8 +13,8 @@ public extension Lucide {
         return [
             .font: UIFont(
                 descriptor: (
-                    Lucide.font(ofSize: targetSize).fontDescriptor.withSymbolicTraits(.traitItalic) ??
-                    Lucide.font(ofSize: targetSize).fontDescriptor
+                    Lucide.uiFont(ofSize: targetSize).fontDescriptor.withSymbolicTraits(.traitItalic) ??
+                    Lucide.uiFont(ofSize: targetSize).fontDescriptor
                 ),
                 size: 0
             ),
@@ -30,7 +30,7 @@ public extension Lucide {
         return NSAttributedString(
             string: icon.rawValue,
             attributes: [
-                .font: Lucide.font(ofSize: size),
+                .font: Lucide.uiFont(ofSize: size),
                 .baselineOffset: baselineOffset
             ]
         )

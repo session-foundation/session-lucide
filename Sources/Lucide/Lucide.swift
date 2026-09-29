@@ -2,7 +2,7 @@ import UIKit
 import SwiftUI
 
 public enum Lucide {
-    public static func font(ofSize size: CGFloat) -> UIFont {
+    public static func uiFont(ofSize size: CGFloat) -> UIFont {
         registerFontIfNeeded()
         
         return UIFont(name: "lucide", size: size)!
