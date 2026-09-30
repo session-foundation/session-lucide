@@ -7,7 +7,7 @@ The default branch for this repository is `main` and it doesn't include Lucide s
 
 ## Version
 
-* This Package: *0.473.3*
+* This Package: *0.473.4*
 * Lucide: *0.473.0*
 
 # Lucide
