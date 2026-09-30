@@ -47,7 +47,7 @@ public class LucideIconView: UIView {
     private func commonInit() {
         backgroundColor = .clear
         
-        textLayer.font = Lucide.font(ofSize: iconSize)
+        textLayer.font = Lucide.uiFont(ofSize: iconSize)
         textLayer.fontSize = iconSize
         textLayer.alignmentMode = .center
         textLayer.contentsScale = UIScreen.main.scale
@@ -83,7 +83,7 @@ public class LucideIconView: UIView {
     }
     
     private func updateLayerFont() {
-        textLayer.font = Lucide.font(ofSize: iconSize)
+        textLayer.font = Lucide.uiFont(ofSize: iconSize)
         textLayer.fontSize = iconSize
     }
 }
